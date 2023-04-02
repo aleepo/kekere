@@ -5,7 +5,7 @@
 #include <tchar.h>
 
 #include "MenuBar.h"
-#include "Thumbnails.h"
+#include "Panels.h"
 
 // Data
 static ID3D11Device *g_pd3dDevice = NULL;
@@ -19,48 +19,6 @@ void CleanupDeviceD3D();
 void CreateRenderTarget();
 void CleanupRenderTarget();
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
-static void ShowThumbnailsWindow(){
-  ImGui::Begin("Thumbnails");
-  ImGui::Text("Thumbnails would go here!");
-  ImGui::End();
-}
-
-static void ShowToolPalette(){
-  ImGui::Begin("Tool Palette ");
-  ImGui::Text("Tools pallette would go here!");
-  ImGui::End();
-}
-
-static void ShowImageSetting(){
-  ImGui::Begin("Image Setting");
-  ImGui::Text("Image Setting  would go here!");
-  ImGui::End();
-}
-
-static void ShowScannerSetting(){
-  ImGui::Begin("Scanner Setting");
-  ImGui::Text("Scanner Setting  would go here!");
-  ImGui::End();
-}
-
-static void ShowColourBalance(){
-  ImGui::Begin("Colour Balance");
-  ImGui::Text("Scanner Setting  would go here!");
-  ImGui::End();
-}
-
-static void ShowUnsharpenMask(){
-  ImGui::Begin("Unsharpen Mask");
-  ImGui::Text("Scanner Setting  would go here!");
-  ImGui::End();
-}
-
-static void ShowProgress(){
-  ImGui::Begin("Progress");
-  ImGui::Text("Progress");
-  ImGui::End();
-}
 
 
 // Entry Point
@@ -126,13 +84,7 @@ int main(int argc, char **argv) {
     ImGui::NewFrame();
 
     ShowDockSpace();
-    ShowThumbnailsWindow();
-    ShowToolPalette();
-    ShowImageSetting();
-    ShowScannerSetting();
-    ShowColourBalance();
-    ShowUnsharpenMask();
-    ShowProgress();
+    ShowPanels();
     
     // Rendering
     ImGui::Render();
