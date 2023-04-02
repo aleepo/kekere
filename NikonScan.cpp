@@ -56,6 +56,11 @@ static void ShowUnsharpenMask(){
   ImGui::End();
 }
 
+static void ShowProgress(){
+  ImGui::Begin("Progress");
+  ImGui::Text("Progress");
+  ImGui::End();
+}
 
 
 // Entry Point
@@ -127,7 +132,7 @@ int main(int argc, char **argv) {
     ShowScannerSetting();
     ShowColourBalance();
     ShowUnsharpenMask();
-
+    ShowProgress();
     
     // Rendering
     ImGui::Render();
