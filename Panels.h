@@ -5,6 +5,7 @@ void ShowPanels();
 void ShowToolPalette();
 void ShowScannerSetting();
 void ShowProgressWindow();
+void ShowThumbnail();
 
 static void CurveSubPanel();
 

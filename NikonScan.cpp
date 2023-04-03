@@ -20,7 +20,6 @@ void CreateRenderTarget();
 void CleanupRenderTarget();
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-
 // Entry Point
 int main(int argc, char **argv) {
   // Create application window
@@ -85,7 +84,7 @@ int main(int argc, char **argv) {
 
     ShowDockSpace();
     ShowPanels();
-    
+
     // Rendering
     ImGui::Render();
     const float clear_color_with_alpha[4] = {

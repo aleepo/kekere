@@ -5,6 +5,7 @@ void ShowPanels() {
   ShowToolPalette();
   ShowScannerSetting();
   ShowProgressWindow();
+  ShowThumbnail();
 }
 
 void ShowToolPalette() {
@@ -20,6 +21,22 @@ void ShowToolPalette() {
 
     if (ImGui::CollapsingHeader("Unsharpen Mask")) {
       ImGui::Text("Unsharpen Mask");
+    }
+
+    if (ImGui::CollapsingHeader("LCH Editor")) {
+      ImGui::Text("LCH Editor");
+    }
+
+    if (ImGui::CollapsingHeader("Digital Ice Advanced")) {
+      ImGui::Text("Digital ICE");
+    }
+
+    if (ImGui::CollapsingHeader("Scan Image Enhancer")) {
+      ImGui::Text("Scan Image Enhancer");
+    }
+
+    if (ImGui::CollapsingHeader("Scanner Extra")) {
+      ImGui::Text("Scanner Extra");
     }
   }
   ImGui::End();
@@ -37,26 +54,9 @@ void ShowProgressWindow() {
   ImGui::End();
 }
 
-void ShowImageSetting() {
-  ImGui::Begin("Image Setting");
-  ImGui::Text("Image Setting  would go here!");
-  ImGui::End();
-}
-
-void ShowColourBalance() {
-  ImGui::Begin("Colour Balance");
-  ImGui::Text("Scanner Setting  would go here!");
-  ImGui::End();
-}
-
-void ShowUnsharpenMask() {
-  ImGui::Begin("Unsharpen Mask");
-  ImGui::Text("Scanner Setting  would go here!");
-  ImGui::End();
-}
-
-void ShowProgress() {
-  ImGui::Begin("Progress");
-  ImGui::Text("Progress");
+void ShowThumbnail(){
+  if(ImGui::Begin("Thumbnails")){
+    ImGui::Text("Display thumbnails here.");
+  }
   ImGui::End();
 }
