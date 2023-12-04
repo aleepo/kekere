@@ -5,4 +5,4 @@ Meaning small in Yoruba is an alternative to the now outdated NikonScan film sca
 ### Current state
 ![Main Window](miscl/main_window.JPG)
 
-### More Updates to come, currently busy with my final year!
+### More Updates to come, currently busy with my final year in Uni!
