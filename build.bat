@@ -1,12 +1,28 @@
 @REM Build for Visual Studio compiler. Run your copy of vcvars32.bat or vcvarsall.bat to setup command-line compiler.
-@set OUT_DIR=debug
-@set OUT_EXE=esme_debug
-@set INCLUDES=/I.\imgui /I MenuBar.h /I Panels.h /I.\imgui\backends /I "%WindowsSdkDir%Include\um" /I "%WindowsSdkDir%Include\shared" /I "%DXSDK_DIR%Include"
-@set SOURCES=main.cpp MenuBar.cpp Panels.cpp .\imgui\backends\imgui_impl_dx11.cpp .\imgui\backends\imgui_impl_win32.cpp .\imgui\imgui*.cpp
-@set LIBS=/LIBPATH:"%DXSDK_DIR%/Lib/x86" d3d11.lib d3dcompiler.lib
-mkdir %OUT_DIR%
+@echo off
 
-rc /nologo .\resource.rc
+cd "run_tree"
 
-cl /nologo /Zi /MD %INCLUDES% /D UNICODE /D _UNICODE %SOURCES% /Fe%OUT_DIR%/%OUT_EXE%.exe /Fo%OUT_DIR%/ /link %LIBS% .\resource.res
+@set OBJ_FILES_OUT=debug
+IF EXIST %OBJ_FILES_OUT%\ (
+   echo 
+) ELSE (
+   MKDIR %OBJ_FILES_OUT%
+)
+
+@set OUT_EXE=kekere_debug
+@set INCLUDES=/I..\src\*.h^
+              /I..\libs\imgui\backends /I..\libs\imgui^
+              /I "%WindowsSdkDir%Include\um"^
+              /I "%WindowsSdkDir%Include\shared" /I "%DXSDK_DIR%Include"
+               
+@set SOURCES=..\src\*.cpp^
+             ..\libs\imgui\backends\imgui_impl_dx11.cpp^
+             ..\libs\imgui\backends\imgui_impl_win32.cpp^
+             ..\libs\imgui\imgui*.cpp
+             
+@set LIBS=/LIBPATH:"%DXSDK_DIR%/Lib/x86" d3d11.lib d3dcompiler.lib user32.lib kernel32.lib
+
+cl /nologo /Zi /MD %INCLUDES% /D UNICODE /D _UNICODE %SOURCES% /Fe%OUT_EXE%.exe /Fo%OBJ_FILES_OUT%/ /link %LIBS%
+cd ..
 
